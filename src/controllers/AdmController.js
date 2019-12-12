@@ -5,14 +5,14 @@ module.exports = {
     async id(req, res) {
         const { user, password } = req.body;
 
-        const user = await Adm.findById(user);
+        const usera = await Adm.findOne(user);
 
-        if (!user) {
+        if (!usera) {
             return res.status(400).json({ erros: 'invalidUser' });
         }
 
-        return res.json(user._id);
-    }
+        return res.json(usera._id);
+    },
     async newUser(req, res) {
         const { user, password } = req.body;
         var hashPass;

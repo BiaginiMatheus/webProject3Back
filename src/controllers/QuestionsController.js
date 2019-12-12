@@ -11,6 +11,7 @@ module.exports = {
                 allQuestions.push(allUsers[j].duvidas[i]);
             }
         }
+
         if (idUser.length != 24) {
             return res.status(400).json({ erros: 'wrongId', allQuestions });
         }
